@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ivanprats.dev</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+
+<body>
+  <div class="transition-all duration-1000 ease-in-out relative">
+    @include('navbar')
+
+    <div class="w-full h-full">
+      <div class="absolute right-0 top-[16%] w-8/12 h-48 bg-pattern-1"></div>
+      <div class="absolute left-0 top-1/2 w-8/12 h-48 bg-pattern-2"></div>
+    </div>
+
+    <main class="px-8 sm:px-4">
+      @!section('content')
+    </main>
+
+    @include('footer')
+  </div>
+</body>
+
+</html>

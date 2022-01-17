@@ -145,6 +145,10 @@ Encore.configureDevServerOptions((options) => {
     directory: join(__dirname, './resources/views'),
     watch: true,
   })
+  options.static.push({
+    directory: join(__dirname, './tailwind.config.js'),
+    watch: true,
+  })
 })
 
 /*
@@ -169,8 +173,8 @@ Encore.configureDevServerOptions((options) => {
 | PostCSS or CSS.
 |
 */
-// Encore.enablePostCssLoader()
-// Encore.configureCssLoader(() => {})
+Encore.enablePostCssLoader()
+Encore.configureCssLoader(() => {})
 
 /*
 |--------------------------------------------------------------------------

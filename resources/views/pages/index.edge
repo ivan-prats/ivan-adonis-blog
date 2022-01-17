@@ -1,0 +1,91 @@
+@layout('layout')
+
+@section('content')
+<section class="mt-8 max-w-xl mx-auto prose prose-sm prose-blue">
+  <div class="flex items-center">
+    <img src="/images/foto-mia-fondo-cielo-azul.png" class="w-20 h-20 rounded-full" />
+    <div class="ml-4 sm:ml-8">
+      <h1>Hello world!</h1>
+      <p>
+        I'm <mark class="px-1 font-bold">Ivan</mark> (left), and I try to be
+        the CTO of a small (for now) DTC brand, here in Barcelona.
+      </p>
+    </div>
+  </div>
+  <p>
+    Because that is not hard enough: I also try to stay in shape, happy, see
+    my friends and family, be a good boyfriend, and have some hobbys.
+  </p>
+
+  <h2>What topics will you hear/read me babble about at all times?</h2>
+  <p>Mainly nerdy stuff:</p>
+  <ul>
+    <li>
+      <i>~mostly~</i> Web programming (Node.js, Vue.js, Sails.js, Serverless,
+      JAMstack, front, back and in-between end...)
+    </li>
+    <li>Entrepreneurship</li>
+    <li>Gym (<i>very</i> occasionaly)</li>
+    <li>And the impacto of all that into my own life/happiness</li>
+  </ul>
+
+  <h2>Philosophies</h2>
+  <p>
+    What is better? Monolith VS Microservices. Servers VS Serverless. PHP VS
+    Ruby. React VS Vue VS Angular VS Template-engine...
+  </p>
+  <blockquote>
+    <p>👏 THERE 👏 IS 👏 NO 👏 BEST 👏 STACK / TECHNOLOGY 👏</p>
+    <p>
+      👏 IT 👏 ALWAYS 👏 DEPENDS 👏 ON 👏 YOUR 👏 PROJECT 👏 AND 👏 TEAM 👏
+    </p>
+  </blockquote>
+  <p>
+    In ❤️ with the idea of the
+    <a href="https://jamstack.org/">JAMstack</a>
+    for scalable front-end solutions
+  </p>
+  <p>
+    Avid defensor of
+    <a href="https://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a>.
+  </p>
+
+  <h2 class="mt-16">Web tech stack</h2>
+  <div class="sm:flex text-left">
+    <div>
+      <p>Back:</p>
+      <ul>
+        <li>Node.js (+ Express)</li>
+        <li>Sails.js (MVC framework for Node + Express)</li>
+      </ul>
+    </div>
+    <div class="sm:ml-6">
+      <p>Front:</p>
+      <ul>
+        <li>Vue</li>
+        <li>Nuxt (static-site-generator framework for Vue)</li>
+        <li>TailwindCSS</li>
+        <li class="italic">(some React for fun)</li>
+      </ul>
+    </div>
+    <div class="sm:ml-6">
+      <p>Others:</p>
+      <ul>
+        <li>
+          <a href="https://stripe.com/docs">Stripe's</a> Webhooks & API's
+        </li>
+        <li>
+          <a href="https://developers.shopify.com/">Shopify's</a> Webhooks,
+          Liquid (server-side rendering language), & API's
+        </li>
+        <li>
+          <a href="https://www.storyblok.com/">Storyblok</a> as a headless CMS
+        </li>
+        <li>
+          Git and Github
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+@endsection
