@@ -28,7 +28,7 @@ export default abstract class ValueObject<T extends ValueObjectProps> {
 
   protected invalidPropError(propName: string, propValue: any, additionalMessage = ''): Error {
     return new Error(
-      `Invalid prop: "${propName}" passed to the constructor. We got "${propValue}", with typeof: ${typeof propValue}. ${additionalMessage}`
+      `Invalid prop: "${propName}" passed to the constructor. We got <${propValue}>, with typeof: <${typeof propValue}>. ${additionalMessage}`
     )
   }
 }

@@ -1,5 +1,44 @@
 {
   "commands": {
+    "test:watch": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": true
+      },
+      "commandPath": "./commands/TestWatch",
+      "commandName": "test:watch",
+      "description": "Used nodemon to run \"npm run test:all\" command on test or application file changes.",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "filter",
+          "name": "filter",
+          "required": false,
+          "description": "Input argument to use for filtering the test file names. Leave empty to not filter"
+        }
+      ],
+      "aliases": [],
+      "flags": [
+        {
+          "name": "load-db",
+          "propertyName": "loadDB",
+          "type": "boolean",
+          "description": "Load the database configuration, with migration rollbacks and runs. This takes longer to do, but is necessary depending on the tests. Defaults to \"true\"."
+        },
+        {
+          "name": "load-seeders",
+          "propertyName": "loadSeeders",
+          "type": "boolean",
+          "description": "Load the database seeders. This flag can only be true if the \"loadDB\" flag is true"
+        },
+        {
+          "name": "load-factories",
+          "propertyName": "loadFactories",
+          "type": "boolean",
+          "description": "Load the database default factories with the command \"node ace db:mongo_factories\". This flag can only be true if the \"loadDB\" flag is true"
+        }
+      ]
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",

@@ -1,0 +1,41 @@
+@layout('layout')
+
+@section('content')
+<section class="mt-8 max-w-xl mx-auto">
+  <div class="prose prose-sm prose-primary">
+    <h1>My blog posts</h1>
+    <p>
+      Here you will find my ramblings, about random topics that I felt like
+      writing about. <br />Either because I wanted to think about it (writing
+      fuels my creative juices), vent about it, or found it at least
+      interesting enough to share with who might care.
+    </p>
+  </div>
+
+  @each(blogPost in blogPosts)
+  <a href="{{ route('BlogPostsController.show', [blogPost.slug]) }}`">
+    <article
+      class="mt-8 px-8 py-6 rounded-lg hover:shadow-lg shadow-md border border-solid border-gray-50 hover:border-primary-100 bg-white">
+      @if(blogPost.category)
+      <p class="mb-0 text-primary-500">{{ category }}</p>
+      @endif
+
+      <h3 class="mt-2 text-xl font-medium">{{ title }}</h3>
+
+      @if(blogPost.teaser)
+      <p class="mt-4 text-gray-700">
+        {{ teaser }}
+      </p>
+      @endif
+
+      @if(blogPost.date)
+      <p class="mt-2 text-gray-700 italic">
+        {{ blogPost.date.toLocaleDateString() }}
+      </p>
+      @endif
+    </article>
+  </a>
+  @endeach
+
+</section>
+@endsection

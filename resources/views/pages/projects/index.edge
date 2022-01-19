@@ -1,0 +1,84 @@
+@layout('layout')
+
+@section('content')
+<section class="max-w-screen-2xl mx-auto">
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="relative pt-12 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
+    <div class="relative max-w-7xl mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+          Projects
+        </h2>
+        <p class="mt-6 sm:mt-6 max-w-2xl mx-auto text-xl text-gray-500">
+          Tech projects and experiences I've had the luxury of taking part
+          that I feel specially proud of.
+        </p>
+      </div>
+
+      <!-- Projects: -->
+      <div class="mt-16 mx-auto max-w-lg lg:max-w-4xl space-y-12">
+        @each(project in projects)
+        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-0">
+            @if(project.image)
+            <img class="h-48 w-full object-cover" src="{{project.image}}" alt="" />
+            @endif
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <div class="space-x-3 text-xs font-medium text-primary-600">
+                @each(category in project.categories)
+                <span class="px-3 py-0.5 border border-solid rounded-full border-primary-600">
+                  {{ category }}
+                </span>
+                @endeach
+              </div>
+              <a href="{{project.link || '#'}}" class="mt-4 block">
+                <div class="flex items-center space-x-3 text-xl font-semibold text-gray-900">
+                  <h3>
+                    {{ project.title }}
+                  </h3>
+                  <!-- External link heroiccon -->
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z">
+                    </path>
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z">
+                    </path>
+                  </svg>
+                </div>
+
+                <div class="prose prose-primary">
+                  {{{project.html}}}
+                </div>
+
+              </a>
+            </div>
+
+            @if(project.dateStart)
+            <div class="mt-8 flex space-x-1 text-sm text-gray-500">
+              <time datetime="{{project.dateStart.toISOString()}}">
+                {{ project.dateStart.toLocaleDateString() }}
+              </time>
+              <span aria-hidden="true">
+                &middot;
+              </span>
+
+              @if(project.dateEnd)
+              <time datetime="{{project.dateEnd.toISOString()}}">
+                {{ project.dateEnd.toLocaleDateString() }}
+              </time>
+              @else
+              <span>Still going on</span>
+              @endif
+
+            </div>
+            @endif
+          </div>
+        </div>
+        @endeach
+      </div>
+    </div>
+  </div>
+</section>
+@endsection

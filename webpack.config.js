@@ -149,6 +149,10 @@ Encore.configureDevServerOptions((options) => {
     directory: join(__dirname, './tailwind.config.js'),
     watch: true,
   })
+  options.static.push({
+    directory: join(__dirname, './data'),
+    watch: true,
+  })
 })
 
 /*

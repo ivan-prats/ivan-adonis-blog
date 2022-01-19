@@ -20,6 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('pages/index')
-})
+Route.on('/').render('pages/index')
+
+Route.resource('projects', 'ProjectsController').only(['index'])

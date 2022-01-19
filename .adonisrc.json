@@ -17,11 +17,7 @@
     "./start/kernel",
     {
       "file": "./start/view",
-      "environment": [
-        "console",
-        "repl",
-        "web"
-      ]
+      "environment": ["console", "repl", "web"]
     }
   ],
   "providers": [
@@ -39,9 +35,11 @@
     {
       "pattern": "resources/views/**/*.edge",
       "reloadServer": false
+    },
+    {
+      "pattern": "data/**",
+      "reloadServer": false
     }
   ],
-  "aceProviders": [
-    "@adonisjs/repl"
-  ]
+  "aceProviders": ["@adonisjs/repl"]
 }
