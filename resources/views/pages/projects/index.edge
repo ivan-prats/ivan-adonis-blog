@@ -18,7 +18,7 @@
       <!-- Projects: -->
       <div class="mt-16 mx-auto max-w-lg lg:max-w-4xl space-y-12">
         @each(project in projects)
-        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+        <div class="flex flex-col rounded-lg border overflow-hidden card-hover-shadow-animation">
           <div class="flex-shrink-0">
             @if(project.image)
             <img class="h-48 w-full object-cover" src="{{project.image}}" alt="" />

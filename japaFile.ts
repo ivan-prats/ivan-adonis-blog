@@ -1,52 +1,14 @@
 import 'reflect-metadata'
 import { join } from 'path'
-import execa from 'execa'
 import getPort from 'get-port'
 import { configure } from 'japa'
 import sourceMapSupport from 'source-map-support'
+// import execa from 'execa'
 
 process.env.NODE_ENV = 'testing'
 process.env.ADONIS_ACE_CWD = join(__dirname)
 sourceMapSupport.install({ handleUncaughtExceptions: false })
 const TESTING_TYPE = process.env.TESTING_TYPE
-
-async function startHttpServer() {
-  const { Ignitor } = await import('@adonisjs/core/build/src/Ignitor')
-  process.env.PORT = String(await getPort())
-  await new Ignitor(__dirname).httpServer().start()
-}
-
-async function runMigrations() {
-  await execa.node('ace', ['migration:run'], {
-    stdio: 'inherit',
-  })
-}
-
-async function rollbackMigrations() {
-  await execa.node('ace', ['migration:rollback', '--batch', '0'], {
-    stdio: 'inherit',
-  })
-}
-
-/**
- */
-async function insertSeeders() {
-  await execa.node('ace', ['db:seed'], {
-    stdio: 'inherit',
-  })
-}
-
-async function runFactories() {
-  await execa.node('ace', ['db:mongo_factories'], {
-    stdio: 'inherit',
-  })
-}
-
-// async function buildAssets() {
-//   await execa.node('ace', ['build', '--assets'], {
-//     stdio: 'inherit',
-//   })
-// }
 
 /**
  * Configure test runner
@@ -90,12 +52,28 @@ configure({
     }
   })(TESTING_TYPE || 'all'),
 
-  before: actionsToRunBeforeTests(process.argv.slice(2)),
+  before: actionsToRunBeforeTests(),
+  // process.argv.slice(2)
 
-  timeout: TESTING_TYPE === 'system' || TESTING_TYPE === 'all' ? 20000 : 10000,
+  timeout: 10000,
 })
 
-function actionsToRunBeforeTests(commandLineArguments: string[]) {
+async function startHttpServer() {
+  const { Ignitor } = await import('@adonisjs/core/build/src/Ignitor')
+  process.env.PORT = String(await getPort())
+  await new Ignitor(__dirname).httpServer().start()
+}
+
+function actionsToRunBeforeTests() {
+  let actions: any[] = []
+  actions.push(startHttpServer)
+  return actions
+}
+
+/**
+ * Uncomment when there is the need of a DB
+
+ function actionsToRunBeforeTests(commandLineArguments: string[]) {
   let actions: any[] = []
   if (undefined === commandLineArguments.find((argument) => argument.startsWith('--'))) {
     // No flags => Do Nothing!
@@ -122,3 +100,34 @@ function actionsToRunBeforeTests(commandLineArguments: string[]) {
   actions.push(startHttpServer)
   return actions
 }
+
+ async function runMigrations() {
+   await execa.node('ace', ['migration:run'], {
+     stdio: 'inherit',
+   })
+ }
+
+ async function rollbackMigrations() {
+   await execa.node('ace', ['migration:rollback', '--batch', '0'], {
+     stdio: 'inherit',
+   })
+ }
+
+ async function insertSeeders() {
+   await execa.node('ace', ['db:seed'], {
+     stdio: 'inherit',
+   })
+ }
+
+ async function runFactories() {
+   await execa.node('ace', ['db:mongo_factories'], {
+     stdio: 'inherit',
+   })
+ }
+
+ async function buildAssets() {
+   await execa.node('ace', ['build', '--assets'], {
+     stdio: 'inherit',
+   })
+ }
+ */

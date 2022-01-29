@@ -14,6 +14,7 @@ Applying a Figma design handed by [Ambar Amill](https://www.ambaramill.com/) int
 The client already had a Wordpress with some content, as well as liking its admin panel. So we went for a solution where we queried the Wordpress site API at build time to use its content, while keeping the wordpress admin experience.
 
 Tech stach used:
+
 <ul class="pl-6 list-disc">
   <li>
     <tech-iccon tech="nuxt"></tech-iccon>

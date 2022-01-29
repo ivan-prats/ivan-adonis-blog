@@ -23,3 +23,4 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.on('/').render('pages/index')
 
 Route.resource('projects', 'ProjectsController').only(['index'])
+Route.resource('blog', 'BlogPostsController').only(['index', 'show'])

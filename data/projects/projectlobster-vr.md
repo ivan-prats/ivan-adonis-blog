@@ -14,6 +14,7 @@ Implementing an interactive popup to let users of a eyeglasses e-commerce on Sho
 Vue was used to handle the complex interactivity and API calls. In order to browse more of the catalogue and load the additional products: the Shopify GraphQL Storefront API was needed.
 
 Tech stack used:
+
 <ul class="pl-6 list-disc">
   <li>
     <tech-iccon tech="shopify"></tech-iccon>

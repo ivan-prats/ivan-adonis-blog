@@ -8,11 +8,12 @@
     "start": "node server.js",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
+    "prepare-deploy": "npm run lint && node ace generate:manifest && npm run format",
     "test:raw": "node -r @adonisjs/assembler/build/register japaFile.ts",
     "test:unit": "TESTING_TYPE=unit npm run test:raw --silent -- --no-db",
     "test:integration": "TESTING_TYPE=integration npm run test:raw --silent",
     "test:system": "TESTING_TYPE=system npm run test:raw --silent",
-    "test:all": "npm run test:unit --silent && npm run test:integration --silent && npm run test:system --silent && npm run build && npm run prepare-deploy"
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:system && npm run build && npm run prepare-deploy"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^5.4.1",

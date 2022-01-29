@@ -16,6 +16,7 @@ export class ProjectsMarkdownRepositoryClass implements ProjectsRepository {
 
       const projects: Project[] = []
       for (const file of files) {
+        if (!file.endsWith('.md')) continue
         const { html, metadata } = await MarkdownService.import<MetadataI>(
           path.join(projectsMarkdownFolder, file)
         )
