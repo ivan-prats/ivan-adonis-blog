@@ -7,3 +7,7 @@ coverage
 tmp
 
 data/blog/hidden
+
+public/assets/app*
+public/assets/entrypoints.json
+public/assets/manifest.json
