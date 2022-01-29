@@ -28,6 +28,22 @@
   padding-left: 1.1428571em;
 } */
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .card-hover-shadow-animation {
+    @apply hover:shadow-md hover:shadow-primary-300 transition duration-500;
+  }
+
+  .button-primary {
+    @apply px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  }
+}
+
 /*
 #fce96a: yellow
 #7DD3FC: blue
