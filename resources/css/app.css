@@ -4,6 +4,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'highlight.js/styles/atom-one-dark.css';
+
 /** Style the inline `code` inclusions */
 /* .nuxt-content>p>code, .nuxt-content li>code {
   @apply bg-gray-700 text-gray-100 font-normal px-2 py-0.5 rounded-md;
