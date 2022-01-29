@@ -22,6 +22,8 @@
     "@types/sinon": "^10.0.6",
     "@types/supertest": "^2.0.11",
     "adonis-preset-ts": "^2.1.0",
+    "alpinejs": "^3.8.1",
+    "autoprefixer": "^10.4.2",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-adonis": "^2.1.0",
