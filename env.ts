@@ -24,4 +24,10 @@ export default Env.rules({
   SESSION_DRIVER: Env.schema.string(),
   DRIVE_DISK: Env.schema.enum(['local'] as const),
   NODE_ENV: Env.schema.enum(POSSIBLE_ENVS),
+
+  CDN_S3_KEY: Env.schema.string(),
+  CDN_S3_SECRET: Env.schema.string(),
+  CDN_S3_REGION: Env.schema.string(),
+  CDN_S3_ENDPOINT: Env.schema.string(),
+  CDN_S3_BUCKET: Env.schema.string(),
 })

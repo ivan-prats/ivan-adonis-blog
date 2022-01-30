@@ -35,10 +35,12 @@
   }
 
   /** Style the inline `code` inclusions */
-  .prose p>code, .prose li>code {
+  .prose p > code,
+  .prose li > code {
     @apply bg-gray-700 text-gray-100 font-normal px-2 py-0.5 rounded-md;
   }
-  .prose code::after, .prose code::before {
+  .prose code::after,
+  .prose code::before {
     content: unset;
   }
 }

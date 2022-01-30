@@ -3,7 +3,7 @@ title: Getting Ibizaprojects into the Jamstack
 categories: ['Front end', 'Nuxt', 'Headless Wordpress']
 slug: redesigning-ibiza-projects
 link: /blog/redesigning-ibiza-projects
-image: '/images/projects/cloud-ibizaprojects.png'
+image: '{{currentEnv.assetsBaseUrl}}/images/projects/cloud-ibizaprojects.png'
 dateStart: '2020-08-03'
 dateEnd: '2020-09-11'
 published: true

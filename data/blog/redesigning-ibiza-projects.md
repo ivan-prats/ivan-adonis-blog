@@ -24,7 +24,7 @@ This blopost aims to explain the reasons behind this choice, and how was the des
 
 <div class="w-80 mx-auto">
 
-![Ibiza Projects: Fashion, Sport, Nutrition, Gastronomy, Beauty, Art, Business, and Personal Growth.    Gif taken from their About page.](/images/blog/ibizaprojects/about.gif)
+![Ibiza Projects: Fashion, Sport, Nutrition, Gastronomy, Beauty, Art, Business, and Personal Growth.    Gif taken from their About page.]({{currentEnv.assetsBaseUrl}}/images/blog/ibizaprojects/about.gif)
 
 </div>
 
@@ -69,13 +69,13 @@ Let's take for example the design of the Project#1 page for mobile devices:
 
 <div class="mx-auto">
 
-![Figma screencapture of the Project#1 page. We can see something on the left saying 'user mobile height' and two screens. As well as some light arrows.](/images/blog/ibizaprojects/screencapture-figma-project-1.png)
+![Figma screencapture of the Project#1 page. We can see something on the left saying 'user mobile height' and two screens. As well as some light arrows.]({{currentEnv.assetsBaseUrl}}/images/blog/ibizaprojects/screencapture-figma-project-1.png)
 
 </div>
 
 It's not too clear what are the different screens and how are they connected. But, as soon as you activate the Prototype feature, things get clearer:
 
-![Figma screencapture showing prototyping feature](/images/blog/ibizaprojects/figma-prototype.gif)
+![Figma screencapture showing prototyping feature]({{currentEnv.assetsBaseUrl}}/images/blog/ibizaprojects/figma-prototype.gif)
 
 Now it makes more sense: we can see a static navigation bar that allows the user to navigate between the screens, as well as the height the image and navigation bar should have.
 
@@ -111,7 +111,7 @@ As well as...
 
 > Any decently made Jamstack site will always be faster and cheaper than it's equivalent in Wordpress.
 
-![Google Lighthouse scores. The new static website (with 5 times more pages and content, as well as using videos and more images) on the left, and the old Wordpress website on the right.](/images/blog/ibizaprojects/screencapture-lighthouse-new-vs-old.png)
+![Google Lighthouse scores. The new static website (with 5 times more pages and content, as well as using videos and more images) on the left, and the old Wordpress website on the right.]({{currentEnv.assetsBaseUrl}}/images/blog/ibizaprojects/screencapture-lighthouse-new-vs-old.png)
 
 You can check the [live Google Lighthouse score of IbizaProjects](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fibizaprojects.netlify.app%2F), and compare it to your website if you want.
 

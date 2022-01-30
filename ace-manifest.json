@@ -1,5 +1,17 @@
 {
   "commands": {
+    "publish:images": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/PublishImages",
+      "commandName": "publish:images",
+      "description": "Publish public/images directory to a remote s3 or digital ocean bucket",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "test:watch": {
       "settings": {
         "loadApp": false,

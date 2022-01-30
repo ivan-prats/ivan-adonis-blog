@@ -14,6 +14,7 @@ test.group('MarkdownFilesService unit tests', () => {
     const expectedMetadata = {
       'this is a string': 'yellow',
       'this is a number': 1,
+      'this is 4': 4,
     }
     const { metadata } = await MarkdownFilesService.import(path.join(__dirname, 'testing.md'))
     assert.deepEqual(metadata, expectedMetadata)

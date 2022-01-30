@@ -3,7 +3,7 @@ title: Virtual Reality glasses try-on popup
 categories: ['Front end', 'Vue', 'Shopify']
 link: 'https://projectlobster.com/collections/gafas-graduadas-hombre/products/mac'
 slug: 'projectlobster-glasses-vr-modal'
-image: '/images/projects/glasses-jocelyn-morales-Mv7kokwzIMw-unsplash.jpg'
+image: '{{currentEnv.assetsBaseUrl}}/images/projects/glasses-jocelyn-morales-Mv7kokwzIMw-unsplash.jpg'
 dateStart: '2019-09-24'
 dateEnd: '2020-10-16'
 published: true

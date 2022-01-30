@@ -23,9 +23,12 @@ You can read more on why and how I organized this repo on its [dedicated blogpos
 ## Dev Machine setup
 
 In order to run this repo on your machine you will need to have installed:
+
 - node.js v14 or more
 - npm v7 or more
 
 Once you have that installed, clone the repo, and run:
+
 1. `npm install` to install dependencies
-2. `npm run dev` to start the dev server on port 3333
+2. Create an empty `.env` file in the root directory, and then copy the contents of the `.env.example` file in it.
+3. `npm run dev` to start the dev server on port 3333
