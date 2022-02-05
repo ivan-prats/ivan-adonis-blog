@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
+    "build-frontend": "webpack --node-env=production --mode=production",
     "start": "node server.js",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
