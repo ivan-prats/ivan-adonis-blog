@@ -19,7 +19,10 @@ export default class BlogPostsController {
     )
 
     if (!blogPostOrNull)
-      throw new Exception('Ooooops... The blog post you are looking for does not exist', 404)
+      throw new Exception(
+        `Ooooops... The blog post you are looking for does not exist. You tried: <${params.id}>`,
+        404
+      )
 
     return await view.render('pages/blog/show', {
       blogPost: blogPostOrNull.primitives,
